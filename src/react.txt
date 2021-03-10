@@ -1,0 +1,42 @@
+DOM and Virtual DOM
+virtual is a React's local copy of the DOM but detached from browser specifics details
+
+React
+Library of js
+
+React features
+JSX, Virtual DOM, Debugging, Component, State, Hooks
+
+ES6 syntax
+
+React components
+Building blocks and split up into reusable pieces
+
+Props
+Passed down from the parent to the child only
+
+State
+Source of data
+
+Arrow function or Fat arrow
+Anonymous and brief syntax
+
+Stateful and Stateless components
+
+Component's lifecycle
+Initial rendering (starts and makes its way to the DOM), Updating Phase (can potentially update and re-render when prop or state change occurs), Unmounting Phase (component is destroyed and removed from the DOM)
+
+Events
+Reactions to specific actions like onClick
+
+map returns a new array containing the results of applying an operation on all original array elements
+filter returns a new array containing the array elements that passed a specified test condition
+reduce reduces all array elements down to one single value
+slice returns a new array without values
+splice mutates and works as slice
+reverse mutates and put values backwards
+concat in a variable sums 2 arrays variables together
+
+// componentDidMount() – Executed on the client side only after the first render.
+// componentDidUpdate() – Called immediately after rendering takes place.
+// componentWillUnmount() – Called after the component is unmounted from the DOM. It is used to clear up the memory spaces.

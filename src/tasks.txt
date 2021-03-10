@@ -1,0 +1,106 @@
+tasks
+calculadora
+
+useffect como se llamaba antes y el map start a 100
+scrum por sprints se divide
+
+checkout para css.
+apicall
+calculadora
+perfil de usuario
+un settings
+errornotfound.
+musicplayer
+
+
+nunca modificar directamente el estado
+
+funcion que tome 1 numero y retorne la suma de 1 hasta el numero
+
+const numero = (number) => {
+  let accum = 0
+
+  for(let i = 1; i <= number; i++){
+    console.log(`${accum} + ${i} = ${accum + i}`)
+    accum += i 
+  }
+
+  return accum
+}
+
+console.log(numero(4))
+/////////////////////////////
+
+[6:34 p. m., 3/1/2021] Bernareotutoria: Your function will be passed two functions, f and g, that don't take any parameters. Your function has to call them, and return a string which indicates which function returned the larger number.
+
+If f returns the larger number, return the string f.
+If g returns the larger number, return the string g.
+If the functions return the same number, return the string neither.
+Examples
+whichIsLarger(() => 5, () => 10) ➞ "g"
+
+whichIsLarger(() => 25,  () => 25) ➞ "neither"
+
+whichIsLarger(() => 505050, () => 5050) ➞ "f"
+[6:35 p. m., 3/1/2021] Bernareotutoria: This challenge will help you interpret mathematical relationships both algebraically and geometrically.
+
+Matchstick Houses, Steps 1, 2 and 3
+
+Create a function that takes a number (step) as an argument and returns the number of matchsticks in that step. See step 1, 2 and 3 in the image above.
+
+Examples
+matchHouses(1) ➞ 6
+
+matchHouses(4) ➞ 21
+
+matchHouses(87) ➞ 436
+[6:35 p. m., 3/1/2021] Bernareotutoria: The left shift operation is similar to multiplication by powers of two.
+
+Sample calculation using the left shift operator (<<):
+
+10 << 3 = 10 * 2^3 = 10 * 8 = 80
+-32 << 2 = -32 * 2^2 = -32 * 4 = -128
+5 << 2 = 5 * 2^2 = 5 * 4 = 20
+Write a function that mimics (without the use of <<) the left shift operator and returns the result from the two given integers.
+
+Examples
+shiftToLeft(5, 2) ➞ 20
+
+shiftToLeft(10, 3) ➞ 80
+
+shiftToLeft(-32, 2) ➞ -128
+
+shiftToLeft(-6, 5) ➞ -192
+
+shiftToLeft(12, 4) ➞ 192
+
+shiftToLeft(46, 6) ➞ 2944
+[6:35 p. m., 3/1/2021] Bernareotutoria: Create a function that takes an array of numbers and return both the minimum and maximum numbers, in that order.
+
+Examples
+minMax([1, 2, 3, 4, 5]) ➞ [1, 5]
+
+minMax([2334454, 5]) ➞ [5, 2334454]
+
+minMax([1]) ➞ [1, 1]
+[6:35 p. m., 3/1/2021] Bernareotutoria: Christmas Eve is almost upon us, so naturally we need to prepare some milk and cookies for Santa! Create a function that accepts a Date object and returns true if it's Christmas Eve (December 24th) and false otherwise. Keep in mind JavaScript's Date month is 0 based, meaning December is the 11th month while January is 0.
+
+Examples
+timeForMilkAndCookies(new Date(2013, 11, 24)) ➞ true
+
+timeForMilkAndCookies(new Date(2013, 0, 23)) ➞ false
+
+timeForMilkAndCookies(new Date(3000, 11, 24)) ➞ true
+
+62273884 respaldo didi
+
+rogelio hernandez 
+
+
+
+
+
+un estado que al seleccionar checkbox cambie el estado por el valor de checkbox
+cambiar de un componente a otro algo escrito
+
+props

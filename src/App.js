@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Header from '../src/Components/Layout/Header/Header'
+import ContextInfo from './Pages/ContextInfo/ContextInfo';
+import CustomerInfo from './Pages/CustomerInfo/CustomerInfo';
+import InteractionHistory from './Pages/InteractionHistory/InteractionHistory';
+import LineInfo from './Pages/LineInfo/LineInfo';
+import NotesHistory from './Pages/NotesHistory/NotesHistory';
+import Personalized from './Pages/Personalized/Personalized';
 
-function App() {
+
+const App = () => {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div >
+      <Header/>
+      <CustomerInfo/>
+      <LineInfo/>
+      <Personalized/>
+      <ContextInfo/>
+      <InteractionHistory/>
+      <NotesHistory/>
+    </div>  
   );
 }
 
