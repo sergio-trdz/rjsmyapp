@@ -16,8 +16,6 @@ const App = () => {
       <CustomerInfo/>
       <Personalized/>
       <ContextInfo/>
-      <InteractionHistory/>
-      <NotesHistory/>
     </div>  
   );
 }

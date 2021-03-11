@@ -36,9 +36,9 @@ const ContextInfo = () => {
           Call Type
         </Typography>
         <NativeSelect>
-          <option >Prepaid</option>
-          <option >Twenty</option>
-          <option >Thirty</option>
+          <option >Escalation</option>
+          <option >Retention</option>
+          <option >Tool not needed</option>
         </NativeSelect>
       </Grid>
 
@@ -47,13 +47,22 @@ const ContextInfo = () => {
       Call Reason
     </Typography>
     <NativeSelect>
-      <option >Payments</option>
-      <option >Twenty</option>
-      <option >Thirty</option>
+      <option >Data Included in Plan - Throttling/Fees</option>
+      <option >Overage Charges</option>
+      <option >Price/Total Charges Every Month</option>
+      <option >Roaming/Experiencing Roaming Throttling</option>
+      <option >Coverage - At Home</option>
+      <option >Coverage - Commute</option>
+      <option >Download Speeds/Video or Social Media Slowness</option>
+      <option >Phone Cost - Current Device</option>
+      <option >Phone Cost - New Device</option>
+      <option >Phone Performance/Damage/Loss</option>
+      <option >Tablet/Connected Device Cancellation</option>
+      <option >General Dissatisfaction</option>
     </NativeSelect>
     </Grid>
 
-    <Grid item xs style={{color: '#000000', fontWeight: 600, fontSize: 10, marginLeft: -550, paddingTop: 36}}>
+    <Grid  style={{color: '#000000', fontWeight: 600, fontSize: 10, paddingTop: 36}}>
     <Link href="#" onClick={preventDefault}>
       Clear Selections
     </Link>

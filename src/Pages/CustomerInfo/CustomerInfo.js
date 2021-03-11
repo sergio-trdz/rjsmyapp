@@ -23,24 +23,35 @@ const CustomerInfo = () => {
           <CardContent>
             <Typography variant="body2">
               <Grid container justify="space-around" >
-                <Grid item xs style={{color: '#000000', fontWeight: 600, fontSize: 12}}>
-                  Customer ID:
+                <Grid item xs style={{color: '#000000', fontWeight: 600, fontSize: 12, paddingTop: 2}}>
+                  Customer ID: 
                 </Grid>
-
-                <Grid item xs style={{color: '#000000', fontWeight: 600, fontSize: 12}}>
+                <Grid >
+                  <Typography variant="body" style={{color: '#000000',  fontSize: 12, marginLeft: -145}}>234-124-764</Typography>
+                </Grid>
+                <Grid item xs style={{color: '#000000', fontWeight: 600, fontSize: 12, paddingTop: 2}}>
                   Customer Type:
                 </Grid>
-
-                <Grid item xs style={{color: '#000000', fontWeight: 600, fontSize: 12}}>
+                <Grid >
+                  <Typography variant="body" style={{color: '#000000',  fontSize: 12, marginLeft: -130}}>Postpaid</Typography>
+                </Grid>
+                <Grid item xs style={{color: '#000000', fontWeight: 600, fontSize: 12, paddingTop: 2}}>
                   Last Month's Bill:
                 </Grid>
-
-                <Grid item xs style={{color: '#000000', fontWeight: 600, fontSize: 12}}>
+                <Grid >
+                  <Typography variant="body" style={{color: '#000000',  fontSize: 12, marginLeft: -120}}>$60</Typography>
+                </Grid>
+                <Grid item xs style={{color: '#000000', fontWeight: 600, fontSize: 12, paddingTop: 2}}>
                   GB used last month:
                 </Grid>
-
-                <Grid item xs style={{color: '#000000', fontWeight: 600, fontSize: 12}}>
+                <Grid >
+                  <Typography variant="body" style={{color: '#000000',  fontSize: 12, marginLeft: -102}}>50 GB</Typography>
+                </Grid>
+                <Grid item xs style={{color: '#000000', fontWeight: 600, fontSize: 12, paddingTop: 2}}>
                   Interactions last month:
+                </Grid>
+                <Grid >
+                  <Typography variant="body" style={{color: '#000000',  fontSize: 12, marginLeft: -83}}>4</Typography>
                 </Grid>
               </Grid>
             </Typography>
