@@ -54,7 +54,7 @@ const Personalized = () => {
 
   return (
     <div style={{padding: 50, paddingTop: 1}}>
-      <Card>
+      <Card style={{borderRadius: 2}}>
       <CardHeader
         title={
           <Typography variant="h6" style={{color: '#FFFFFF', fontWeight: 600}}>

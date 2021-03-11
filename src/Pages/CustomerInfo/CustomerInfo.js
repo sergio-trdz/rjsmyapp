@@ -12,7 +12,7 @@ const CustomerInfo = () => {
   
   return (
     <div style={{padding: 50, paddingTop: 110}}>
-      <Card>
+      <Card style={{borderRadius: 2}}>
       <CardHeader
         title={
           <Typography variant="h6" style={{color: '#FFFFFF', fontWeight: 600}}>
