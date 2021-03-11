@@ -14,7 +14,6 @@ const App = () => {
     <div >
       <Header/>
       <CustomerInfo/>
-      <LineInfo/>
       <Personalized/>
       <ContextInfo/>
       <InteractionHistory/>
