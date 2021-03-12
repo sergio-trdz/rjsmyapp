@@ -36,9 +36,8 @@ const ContextInfo = () => {
           Call Type
         </Typography>
         <NativeSelect>
-          <option >Escalation</option>
-          <option >Retention</option>
-          <option >Tool not needed</option>
+          <option >CS</option>
+          <option >Prepaid</option>
         </NativeSelect>
       </Grid>
 
@@ -47,18 +46,15 @@ const ContextInfo = () => {
       Call Reason
     </Typography>
     <NativeSelect>
-      <option >Data Included in Plan - Throttling/Fees</option>
-      <option >Overage Charges</option>
-      <option >Price/Total Charges Every Month</option>
-      <option >Roaming/Experiencing Roaming Throttling</option>
-      <option >Coverage - At Home</option>
-      <option >Coverage - Commute</option>
-      <option >Download Speeds/Video or Social Media Slowness</option>
-      <option >Phone Cost - Current Device</option>
-      <option >Phone Cost - New Device</option>
-      <option >Phone Performance/Damage/Loss</option>
-      <option >Tablet/Connected Device Cancellation</option>
-      <option >General Dissatisfaction</option>
+      <option >Payments</option>
+      <option >Billing</option>
+      <option >Transfers</option>
+      <option >Technical Issues</option>
+      <option >Products</option>
+      <option >Plan Changes & General Topics Device Updates</option>
+      <option >Decive Mentions</option>
+      <option >Discounts & Promotions</option>
+      <option >My Account</option>
     </NativeSelect>
     </Grid>
 
