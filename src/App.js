@@ -30,6 +30,8 @@ class App extends Component {
         <CustomerInfo mdnId={this.state.id}/>
         <Personalized/>
         <ContextInfo/>
+        <InteractionHistory/>
+        <NotesHistory/>
       </div>  
     );
   }

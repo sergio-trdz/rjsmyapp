@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+
 const Personalized = () => {
 
   const classes = useStyles();
