@@ -56,8 +56,11 @@ function Header(props) {
             Select MDN
           </Typography>
           <NativeSelect
-            // value={state.age}
-            onChange={handleChange}        
+            value={props.currentMDN}
+            onChange={props.onChangeMDN}
+
+            
+                   
             className={classes.select}
           >          
             <option aria-label="None" value=""></option>

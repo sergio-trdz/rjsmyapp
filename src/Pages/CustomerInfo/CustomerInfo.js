@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
@@ -27,6 +27,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CustomerInfo = (props) => {
+
+  const {currentMDN} = props;
   
   const [mdnInfo, setMdnInfo] = React.useState({
     id: '',
@@ -35,6 +37,12 @@ const CustomerInfo = (props) => {
     gb: '',
     interactions: ''
   });
+
+  const [ id, setId ] = useState('')
+  const [ customerType, setCustomerType] = useState('')
+  const [ bill, setBill ] = useState('')
+  const [ gb, setGb ] = useState('')
+  const [ interactions, setInteractions] = useState('')
 
   let hardcodedJson = [{
     id: '707-298-5587',
@@ -51,6 +59,15 @@ const CustomerInfo = (props) => {
   }];
 
   useEffect(() => {
+    //Newcode
+    const newInfo = hardcodedJson.filter(data => data.id === currentMDN)[0];
+    setId(newInfo?.id)
+    setCustomerType(newInfo?.customerType)
+    setBill(newInfo?.bill)
+    setGb(newInfo?.gb)
+    setInteractions(newInfo?.interactions)
+
+
     const newJson = hardcodedJson.filter(obj => obj.id === props.mdnId)
     if(newJson.length === 0) {
       setMdnInfo({
@@ -63,7 +80,7 @@ const CustomerInfo = (props) => {
     } else {
       setMdnInfo(newJson[0]);
     }
-  }, [props])
+  }, [currentMDN])
 
   const classes = useStyles();
 
@@ -81,23 +98,23 @@ const CustomerInfo = (props) => {
             <Grid container className={classes.cardContentStyle}>
               <Grid item md xs="12" className={classes.gridHeader}>
                 Customer ID:
-                <Typography variant="body" className={classes.gridText}>{mdnInfo.id}</Typography>
+                <Typography variant="body" className={classes.gridText}>{id}</Typography>
               </Grid>
               <Grid item md xs="12" className={classes.gridHeader}>
                 Customer Type:
-                <Typography variant="body" className={classes.gridText}>{mdnInfo.customerType}</Typography>
+                <Typography variant="body" className={classes.gridText}>{customerType}</Typography>
               </Grid>
               <Grid item md xs="12" className={classes.gridHeader}>
                 Last Month's Bill:
-                <Typography variant="body" className={classes.gridText}>{mdnInfo.bill}</Typography>
+                <Typography variant="body" className={classes.gridText}>{bill}</Typography>
               </Grid>
               <Grid item md xs="12" className={classes.gridHeader}>
                 GB used last month:
-                <Typography variant="body" className={classes.gridText}>{mdnInfo.gb}</Typography>
+                <Typography variant="body" className={classes.gridText}>{gb}</Typography>
               </Grid>
               <Grid item md xs="12" className={classes.gridHeader}>
                 Interactions last month:
-                <Typography variant="body" className={classes.gridText}>{mdnInfo.interactions}</Typography>
+                <Typography variant="body" className={classes.gridText}>{interactions}</Typography>
               </Grid>
             </Grid>
           </CardContent>

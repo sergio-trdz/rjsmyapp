@@ -1,3 +1,4 @@
+import {useState, useEffect} from 'react'
 import React from 'react'
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -14,64 +15,90 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core';
+import DataRow from '../../Components/Personalized/DataRow';
 
-const useStyles = makeStyles((theme) => ({
-  somethingtoworkwith: {
-    color : 'primary'
+
+const Personalized = (props) => {
+  const { currentMDN } = props;
+
+
+
+const [ isCurrentMDN, setIsCurrentMDN] = useState(false);
+const [ isAll, setIsAll] = useState(false);
+const [ isAccount, setIsAccount] = useState(false);
+const [data, setData] = useState([
+  {
+    id : 1,
+    priority: 1,
+    level: '707-298-5587',
+    offerName: 'Position latest phone deals for upgrade',
+    interested: false
+  },
+  {
+    id : 1,
+    priority: 2,
+    level: 'Account',
+    offerName: '50% off subsidy early upgrade offer',
+    interested: true
+  },
+  {
+    id : 1,
+    priority: 3,
+    level: '640-298-4409',
+    offerName: 'Restricted $50 monthly credit - 1 yr',
+    interested: false
+  },
+  {
+    id : 1,
+    priority: 4,
+    level: 'Account',
+    offerName: 'Discussion/education/upsell opportunity',
+    interested: false
+  },
+  {
+    id : 1,
+    priority: 5,
+    level: '707-298-5587',
+    offerName: 'EEUE policy buy down of equipment timer',
+    interested: true
   }
-}));
+]);
 
 
-const Personalized = () => {
+const [showed, setShowed] = useState([]);
 
-  const classes = useStyles();
+useEffect(() => {
 
-  const [state, setState] = React.useState({
-    checkedA: true,
-    checkedB: true,
-    checkedF: true,
-    checkbox: undefined,
-    checbox1: undefined,
-    checbox2: undefined,
-    checbox3: undefined,
-    checbox4: undefined,
-  });
+  setShowed(
+    data.filter(offer => {
 
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-  };
+      if (isAll) return true;
+      if (isCurrentMDN && isAccount ) return (offer.level === "Account" || offer.level === currentMDN);
+      if (isCurrentMDN) return offer.level === currentMDN;
+      if (isAccount) return offer.level === "Account";
+      return true
 
-  const handleTableChange = (event) => {
-    setState({ ...state, checkbox: event.target.name });
-  };
+    })
+  )
 
-  const handleTableChange1 = (event) => {
-    setState({ ...state, checkbox1: event.target.name });
-  };
-  
-  const handleTableChange2 = (event) => {
-    setState({ ...state, checkbox2: event.target.name });
-  };
+  // const newData = JSON.parse(JSON.stringify(data));
 
-  const handleTableChange3 = (event) => {
-    setState({ ...state, checkbox3: event.target.name });
-  };
+  // if(isAll) {
+  //   setShowed(newData);
+  //   return;
+  // }
 
-  const handleTableChange4 = (event) => {
-    setState({ ...state, checkbox4: event.target.name });
-  };
+  // if( isCurrentMDN ) {
+  //     setShowed(newData.filter (offer => offer.level === currentMDN))
+  // }
 
-  const rows = [
-    {priority: 1, level: '707-298-5587', offername:'Position latest phone deals for upgrade', previously:'Yes', accept: <Checkbox color="primary" name="A" onChange={handleTableChange} checked={state.checkbox === 'A'}/>, reject: <Checkbox color="primary" name="B" onChange={handleTableChange} checked={state.checkbox === 'B'}/>, maybe: <Checkbox color="primary" name="C" onChange={handleTableChange} checked={state.checkbox === 'C'}/>},
-    {priority: 2, level: 'Account', offername:'50% off subsidy early upgrade offer', previously:'No', accept: <Checkbox color="primary" name="A" onChange={handleTableChange1} checked={state.checkbox1 === 'A'}/>, reject: <Checkbox color="primary" name="B" onChange={handleTableChange1} checked={state.checkbox1 === 'B'}/>, maybe: <Checkbox color="primary" name="C" onChange={handleTableChange1} checked={state.checkbox1 === 'C'}/>},
-    {priority: 3, level: '640-298-4409', offername:'Restricted $50 monthly credit - 1 yr', previously:'Yes', accept: <Checkbox color="primary" name="A" onChange={handleTableChange2} checked={state.checkbox2 === 'A'}/>, reject: <Checkbox color="primary" name="B" onChange={handleTableChange2} checked={state.checkbox2 === 'B'}/>, maybe: <Checkbox color="primary" name="C" onChange={handleTableChange2} checked={state.checkbox2 === 'C'}/>},
-    {priority: 4, level: 'Account', offername:'Discussion/education/upsell opportunity', previously:'Yes', accept: <Checkbox color="primary" name="A" onChange={handleTableChange3} checked={state.checkbox3 === 'A'}/>, reject: <Checkbox color="primary" name="B" onChange={handleTableChange3} checked={state.checkbox3 === 'B'}/>, maybe: <Checkbox color="primary" name="C" onChange={handleTableChange3} checked={state.checkbox3 === 'C'}/>},
-    {priority: 5, level: '640-298-4409', offername:'EEUE policy buy down of equipment timer', previously:'N/A', accept: <Checkbox color="primary" name="A" onChange={handleTableChange4} checked={state.checkbox4 === 'A'}/>, reject: <Checkbox color="primary" name="B" onChange={handleTableChange4} checked={state.checkbox4 === 'B'}/>, maybe: <Checkbox color="primary" name="C" onChange={handleTableChange4} checked={state.checkbox4 === 'C'}/>},
-    // {2, '707-298-5587', '50% off subsidy early upgrade offer', 'No', 4.3, 2.3, 12},
-    // {3, 'Account', 'Restricted $50 monthly credit - 1 yr', 'Yes', 6.0, 2.3, 12},
-    // {4, 'Account', 'Discussion/education/upsell opportunity', 'Yes', 4.3, 2.3, 12},
-    // {5, '707-298-5587', 'EEUE policy buy down of equipment timer', 'N/A', 3.9, 2, 12},
-  ];
+  // if (isAccount) {
+  //   setShowed(data.filter (offer => offer.level === 'Account'))
+  // }
+
+}, [isCurrentMDN, isAll, isAccount, currentMDN]);
+
+
 
   return (
     <div style={{padding: 50, paddingTop: 1}}>
@@ -99,19 +126,16 @@ const Personalized = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.priority}>
-              <TableCell component="th" scope="row">
-                {row.priority}
-              </TableCell>
-              <TableCell align="center">{row.level}</TableCell>
-              <TableCell align="center">{row.offername}</TableCell>
-              <TableCell align="center">{row.previously}</TableCell>
-              <TableCell align="center">{row.accept}</TableCell>
-              <TableCell align="center">{row.reject}</TableCell>
-              <TableCell align="center">{row.maybe}</TableCell>
-            </TableRow>
-          ))}
+          {showed.map((offer, i) => 
+            <DataRow key={i}
+                     id={offer.id}
+                     priority={offer.priority}
+                     interested={offer.interested}
+                     level={offer.level}
+                     name={offer.offerName}    
+            />
+          )}
+
         </TableBody>
       </Table>
     </TableContainer>
@@ -124,9 +148,8 @@ const Personalized = () => {
             // style={{color: '#000000', paddingTop: 6, padding}}
             control={
               <Checkbox
-                checked={state.checkedA}
-                onChange={handleChange}
-                name="checkedA"
+                checked={isCurrentMDN}
+                onChange={(input) => setIsCurrentMDN ( input.target.checked)}
                 color="primary"
                 style={{paddingLeft: 15, paddingTop: 35}}
               />
@@ -140,9 +163,8 @@ const Personalized = () => {
             // style={{color: '#000000', paddingTop: 6, padding}}
             control={
               <Checkbox
-                checked={state.checkedB}
-                onChange={handleChange}
-                name="checkedB"
+              checked={isAll}
+              onChange={(input) => setIsAll ( input.target.checked)}
                 color="primary"
               
                 style={{paddingLeft: 55, paddingTop: 35}}
@@ -157,9 +179,8 @@ const Personalized = () => {
             // style={{color: '#000000', paddingTop: 6, padding}}
             control={
               <Checkbox
-                checked={state.checkedF}
-                onChange={handleChange}
-                name="checkedF"
+              checked={isAccount}
+              onChange={(input) => setIsAccount ( input.target.checked)}
                 color="primary"
                 style={{paddingLeft: 55, paddingTop: 35}}
               />

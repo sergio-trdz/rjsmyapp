@@ -9,12 +9,21 @@ import Personalized from './Pages/Personalized/Personalized';
 
 class App extends Component {
 
+
+
   constructor(props) {
     super(props);
  
     this.state = {
-      id: ''
+      id: '',
+      currentMDN: ''
     };
+  }
+
+  onChangeMDN = (input) => {
+    this.setState({
+      currentMDN: input.target.value
+    })
   }
 
   myCallback = (dataFromChild) => {
@@ -26,9 +35,9 @@ class App extends Component {
   render() {
     return (
       <div >
-        <Header callbackFromParent={this.myCallback}/>
-        <CustomerInfo mdnId={this.state.id}/>
-        <Personalized/>
+        <Header callbackFromParent={this.myCallback} onChangeMDN={this.onChangeMDN} currentMDN={this.state.currentMDN}/>
+        <CustomerInfo mdnId={this.state.id} currentMDN={this.state.currentMDN}/>
+        <Personalized currentMDN={this.state.currentMDN}/>
         <ContextInfo/>
         <InteractionHistory/>
         <NotesHistory/>
