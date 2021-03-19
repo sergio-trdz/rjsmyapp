@@ -63,7 +63,7 @@ function Header(props) {
                    
             className={classes.select}
           >          
-            <option aria-label="None" value=""></option>
+           
             <option value="707-298-5587">707-298-5587</option>
             <option value="640-298-4409">640-298-4409</option>
           </NativeSelect>

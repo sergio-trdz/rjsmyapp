@@ -9,14 +9,12 @@ import Personalized from './Pages/Personalized/Personalized';
 
 class App extends Component {
 
-
-
   constructor(props) {
     super(props);
  
     this.state = {
       id: '',
-      currentMDN: ''
+      currentMDN: '707-298-5587'
     };
   }
 

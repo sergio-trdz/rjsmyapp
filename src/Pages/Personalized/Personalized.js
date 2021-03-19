@@ -37,21 +37,21 @@ const [data, setData] = useState([
   {
     id : 1,
     priority: 2,
-    level: '707-298-5587',
+    level: 'Account',
     offerName: '50% off subsidy early upgrade offer',
     interested: true
   },
   {
     id : 1,
     priority: 3,
-    level: '707-298-5587',
+    level: 'Account',
     offerName: 'Restricted $50 monthly credit - 1 yr',
     interested: false
   },
   {
     id : 1,
     priority: 4,
-    level: '707-298-5587',
+    level: '640-298-4409',
     offerName: 'Discussion/education/upsell opportunity',
     interested: false
   },
@@ -71,14 +71,14 @@ const [data, setData] = useState([
   {
     id : 1,
     priority: 2,
-    level: 'Account',
+    level: '707-298-5587',
     offerName: '50% off subsidy early upgrade offer',
     interested: true
   },
   {
     id : 1,
     priority: 3,
-    level: 'Account',
+    level: '707-298-5587',
     offerName: 'Restricted $50 monthly credit - 1 yr',
     interested: false
   },
@@ -119,7 +119,7 @@ const [data, setData] = useState([
   {
     id : 1,
     priority: 4,
-    level: '640-298-4409',
+    level: '707-298-5587',
     offerName: 'Discussion/education/upsell opportunity',
     interested: false
   },
@@ -194,10 +194,10 @@ useEffect(() => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {showed.map((offer, i) => 
+          {showed.slice(0,5).map((offer, i) => 
             <DataRow key={i}
                      id={offer.id}
-                     priority={offer.priority}
+                     priority={i + 1}
                      interested={offer.interested}
                      level={offer.level}
                      name={offer.offerName}    
