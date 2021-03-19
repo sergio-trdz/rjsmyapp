@@ -37,6 +37,40 @@ const [data, setData] = useState([
   {
     id : 1,
     priority: 2,
+    level: '707-298-5587',
+    offerName: '50% off subsidy early upgrade offer',
+    interested: true
+  },
+  {
+    id : 1,
+    priority: 3,
+    level: '707-298-5587',
+    offerName: 'Restricted $50 monthly credit - 1 yr',
+    interested: false
+  },
+  {
+    id : 1,
+    priority: 4,
+    level: '707-298-5587',
+    offerName: 'Discussion/education/upsell opportunity',
+    interested: false
+  },
+  {
+    id : 1,
+    priority: 5,
+    level: '707-298-5587',
+    offerName: 'EEUE policy buy down of equipment timer',
+    interested: true
+  },{
+    id : 1,
+    priority: 1,
+    level: 'Account',
+    offerName: 'Position latest phone deals for upgrade',
+    interested: false
+  },
+  {
+    id : 1,
+    priority: 2,
     level: 'Account',
     offerName: '50% off subsidy early upgrade offer',
     interested: true
@@ -44,7 +78,7 @@ const [data, setData] = useState([
   {
     id : 1,
     priority: 3,
-    level: '640-298-4409',
+    level: 'Account',
     offerName: 'Restricted $50 monthly credit - 1 yr',
     interested: false
   },
@@ -58,10 +92,44 @@ const [data, setData] = useState([
   {
     id : 1,
     priority: 5,
-    level: '707-298-5587',
+    level: 'Account',
     offerName: 'EEUE policy buy down of equipment timer',
     interested: true
-  }
+  },{
+    id : 1,
+    priority: 1,
+    level: '640-298-4409',
+    offerName: 'Position latest phone deals for upgrade',
+    interested: false
+  },
+  {
+    id : 1,
+    priority: 2,
+    level: '640-298-4409',
+    offerName: '50% off subsidy early upgrade offer',
+    interested: true
+  },
+  {
+    id : 1,
+    priority: 3,
+    level: '640-298-4409',
+    offerName: 'Restricted $50 monthly credit - 1 yr',
+    interested: false
+  },
+  {
+    id : 1,
+    priority: 4,
+    level: '640-298-4409',
+    offerName: 'Discussion/education/upsell opportunity',
+    interested: false
+  },
+  {
+    id : 1,
+    priority: 5,
+    level: '640-298-4409',
+    offerName: 'EEUE policy buy down of equipment timer',
+    interested: true
+  },
 ]);
 
 
